@@ -61,8 +61,9 @@ const actions = {
         axios.get('departments.json')
             .then(res => {  
                 console.log('action: ', res.data);
-                for(let property in res.data) {
-                    deps.push(res.data[property]);
+                for(let key in res.data) {
+                    res.data[key]
+                    deps.push(res.data[key]);
                 }
                 commit('SET_DEPTS', deps);
             })

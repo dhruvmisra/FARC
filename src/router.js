@@ -9,6 +9,8 @@ import ShowDept from './components/admin/ShowDept'
 import ShowDoctor from './components/admin/ShowDoctor'
 import ShowHospital from './components/admin/ShowHospital'
 
+import Department from './components/Department'
+
 Vue.use(VueRouter);
 
 const routes = [
@@ -18,7 +20,8 @@ const routes = [
     { path: '/admin/add/hospital', component: AddHospital },
     { path: '/admin/show/dept', component: ShowDept },
     { path: '/admin/show/doctor', component: ShowDoctor },
-    { path: '/admin/show/hospital', component: ShowHospital }
+    { path: '/admin/show/hospital', component: ShowHospital },
+    { path: '/dept/:id', component: Department },
 ];
 
 export default new VueRouter({

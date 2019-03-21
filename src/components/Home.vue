@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="container features">
-            <div class="row" style="font-size: 1.5em;">
+            <div class="row text-dark" style="font-size: 1.5em;">
                 <div class="card border-0 mx-auto col-md-12 col-lg-4"
                         v-for="feature in features"
                         :key="feature.text">
