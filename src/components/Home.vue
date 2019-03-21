@@ -9,41 +9,31 @@
             </div>
         </div>
         <div class="container features">
-            <div class="card-deck" style="font-size: 1.5em;">
-                <div class="card border-0">
+            <div class="row" style="font-size: 1.5em;">
+                <div class="card border-0 mx-auto col-md-12 col-lg-4"
+                        v-for="feature in features"
+                        :key="feature.text">
                     <div class="card-body text-center">
-                        <div class="far fa-calendar-check fa-8x text-primary"></div>
-                        <div class="card-body">Unified Appointment Booking</div>
-                    </div>
-                </div>
-                <div class="card border-0">
-                    <div class="card-body text-center">
-                        <div class="fas fa-database fa-8x text-warning"></div>
-                        <div class="card-body">Central Database for All</div>
-                    </div>
-                </div>
-                <div class="card border-0">
-                    <div class="card-body text-center">
-                        <div class="fas fa-user-md fa-8x text-success"></div>
-                        <div class="card-body">Doctor Recommendation System</div>
+                        <div class="fas fa-8x" :class="feature.icon"></div>
+                        <div class="card-body">{{ feature.text }}</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid app">
+        <div class="container-fluid section">
             <div class="container">
-                <div class="card-deck">
-                    <div class="card text-white" style="font-size: 1.5em; background: none; border: none">
-                        <div class="card-body mx-auto">
-                            <div class="far fa-calendar-check fa-10x"></div>
-                            <div class="card-body text-center">Unified Appointment Booking</div>
+                <div class="card bg-transparent border-0 text-center">
+                    <div class="card-header bg-transparent">
+                        <h1 class="card-title">Departments</h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-columns">
+                            <div class="card rounded-pill selection my-2"
+                                    v-for="dept in depts"
+                                    :key="dept.deptId">
+                                <div class="card-body">{{ dept.dept.deptName }}</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card text-white" style="font-size: 1.5em; background: none; border: none">
-                        <div class="card-body">This is a feature</div>
-                    </div>
-                    <div class="card text-white" style="font-size: 1.5em; background: none; border: none">
-                        <div class="card-body">This is a feature</div>
                     </div>
                 </div>
             </div>
@@ -53,7 +43,32 @@
 
 <script>
     export default {
-        
+        data() {
+            return {
+                features: [
+                    {
+                        text: 'Unified Appointment Booking',
+                        icon: 'fa-calendar-check'
+                    },
+                    {
+                        text: 'Central Database for All',
+                        icon: 'fa-database'
+                    },
+                    {
+                        text: 'Doctor Recommendation System',
+                        icon: 'fa-user-md'
+                    },
+                ]
+            }
+        },
+        created() {
+            this.$store.dispatch('loadDepts');
+        },
+        computed: {
+            depts() {
+                return this.$store.getters.depts;
+            }
+        }
     }
 </script>
 
@@ -65,16 +80,18 @@
         height: 450px; 
     }
     .features {
-        height: 50vh;
+        height: fit-content;
     }
-    .app {
-        background-color: #343A40;
-        height: 50vh;
+    .section {
+        background-color: #f7f7f7;
+        height: fit-content;
     }
-    .container-fluid {
-        padding-right:0;
-        padding-left:0;
-        margin-right:auto;
-        margin-left:auto
+    .selection:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+    .selection:active {
+        transform: scale(1);
+        cursor: pointer;
     }
 </style>

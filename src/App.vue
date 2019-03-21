@@ -16,4 +16,11 @@
 </script>
 
 <style>
+    .container-fluid {
+        padding-right:0;
+        padding-left:0;
+        margin-right:auto;
+        margin-left:auto
+    }
+
 </style>

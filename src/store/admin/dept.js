@@ -10,6 +10,7 @@ const getters = {
         return state.deptId;
     },
     depts(state) {
+        console.log('get depts');
         return state.depts;
     }
 };
