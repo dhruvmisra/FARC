@@ -18,6 +18,11 @@
                       <div class="fa fa-location-arrow"></div>
                       Directions: <a :href="hospital.link" target="_blank">Google Maps</a> 
                     </small>
+                    <br>
+                    <small class="card-text text-secondary">
+                      DeptIds:
+                      <span v-for="dept in hospital.depts" :key="dept">{{ dept }}, </span>
+                    </small>
                   </div>
                   <div class="card-footer bg-success text-center text-white">Beds Available</div>
               </div>
