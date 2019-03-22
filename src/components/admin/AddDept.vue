@@ -55,6 +55,8 @@
 </template>
 
 <script>
+  import {testDb} from '../../firebase-db.js';
+
   export default {
     data() {
       return {
@@ -84,6 +86,11 @@
     },
     created() {
       this.$store.dispatch('loadDeptId');
+      const key = testDb.push().key;
+      const path = '/' + key + '/testing';
+      testDb.update({
+        path: true
+      })
     },
     methods: {
       addDept() {
