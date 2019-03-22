@@ -11,5 +11,6 @@ const config = {
 };
 firebase.initializeApp(config);
 
-export const testDb = firebase.database().ref('test');
-export const test2Db = firebase.database().ref('test2');
+export const DeptsDB = firebase.database().ref('departments');
+export const HospitalsDB = firebase.database().ref('hospitals');
+export const DoctorsDB = firebase.database().ref('doctors');

@@ -30,7 +30,8 @@
                         <div class="card-columns">
                             <div class="card rounded-pill selection my-2"
                                     v-for="dept in depts"
-                                    :key="dept.deptId">
+                                    :key="dept.deptId"
+                                    @click="$router.push({ path: `/dept/${dept.deptId}` })">
                                 <div class="card-body">{{ dept.dept.deptName }}</div>
                             </div>
                         </div>
@@ -68,7 +69,7 @@
             depts() {
                 return this.$store.getters.depts;
             }
-        }
+        },
     }
 </script>
 
