@@ -12,7 +12,7 @@
                   <div class="card-body">
                     <img :src="require(`../../assets/${doctor.gender}.png`)" alt="Doctor image" class="card-img-top">
                     <h4 class="card-title mt-4">{{ doctor.firstName | dr }} {{ doctor.lastName }} </h4>
-                    <div class="card-text"> {{ doctor.designation }}</div>
+                    <div class="card-text"> {{ doctor.designation }} ({{ doctor.deptId }})</div>
                     <small>{{ doctor.qualification }}</small> <br>
                     <small class="card-text text-secondary">Rating: {{ doctor.rating }}</small>
                   </div>
