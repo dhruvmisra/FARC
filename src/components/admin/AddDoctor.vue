@@ -25,6 +25,27 @@
                       v-model="lastName">
             </div>
           </div>
+          <div class="form-row">
+            <div class="form-check mx-2">
+              <input class="form-check-input" 
+                      type="radio" 
+                      value="male" 
+                      v-model="gender">
+              <label class="form-check-label">
+                Male
+              </label>
+            </div>
+            <div class="form-check mx-2">
+              <input class="form-check-input" 
+                      type="radio" 
+                      value="female" 
+                      v-model="gender">
+              <label class="form-check-label">
+                Female
+              </label>
+            </div>
+          </div>
+          <br>
           <div class="form-group">
             <label>Designation</label>
             <input type="text" 
@@ -71,27 +92,13 @@
                       v-model="experience">
             </div>
           </div>
-          <div class="form-row">
-            <div class="form-check mx-2">
-              <input class="form-check-input" 
-                      type="radio" 
-                      value="male" 
-                      v-model="gender">
-              <label class="form-check-label">
-                Male
-              </label>
-            </div>
-            <div class="form-check mx-2">
-              <input class="form-check-input" 
-                      type="radio" 
-                      value="female" 
-                      v-model="gender">
-              <label class="form-check-label">
-                Female
-              </label>
+          <div class="form-group">
+            <div>Days Avaialable: </div>
+            <div class="form-check form-check-inline" v-for="day in days" :key="day">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" :value="day" v-model="available">
+              <label class="form-check-label" for="inlineCheckbox1">{{ day }}</label>
             </div>
           </div>
-          <br>
           <button type="submit" class="btn btn-primary">Add</button>
           <div class="alert alert-success m-3" v-if="success">Added Successfully</div>
         </form>
@@ -112,7 +119,9 @@
         rating: null,
         qualification: '',
         experience: null,
-        gender: 'male'
+        gender: 'male',
+        available: [],
+        days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
       }
     },
     computed: {
@@ -144,7 +153,8 @@
           rating: this.rating,
           qualification: this.qualification,
           experience: this.experience,
-          gender: this.gender
+          gender: this.gender,
+          available: this.available
         };
         this.$store.dispatch('addDoctor', data);
       }
