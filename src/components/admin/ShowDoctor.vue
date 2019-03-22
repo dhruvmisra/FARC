@@ -5,7 +5,7 @@
         <h1>Doctors</h1>
       </div>
       <div class="card-body">
-          <div class="card-deck">
+          <div class="row">
               <div class="card col-md-3"
                     v-for="doctor in doctors"
                     :key="doctor.DId">

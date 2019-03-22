@@ -3,11 +3,11 @@
     <h1 class="text-center my-3">{{ department.deptName }}</h1>
     <hr>
     <div class="card text-center my-2">
-      <h6 class="card-header bg-dark text-white">Treatments in this department</h6>
+      <h5 class="card-header bg-dark text-white">Treatments in this department</h5>
         <table class="table table-striped">
           <thead>
             <tr>
-              <th scope="col">Treatment Name</th>
+              <th scope="col" style="width: 60%">Treatment Name</th>
               <th scope="col">Price</th>
             </tr>
           </thead>
@@ -19,8 +19,9 @@
           </tbody>
         </table>
     </div>
+    <br>
     <div class="card text-center my-2">
-      <h6 class="card-header bg-dark text-white">Hospitals with this department</h6>
+      <h5 class="card-header bg-dark text-white">Hospitals with this department</h5>
         <div class="row mx-auto">
           <div class="card col-xs-12 col-sm-6 col-lg-4 my-2"
                 v-for="hospital in hospitals"
