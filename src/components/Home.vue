@@ -28,12 +28,13 @@
                     </div>
                     <div class="card-body">
                         <div class="card-columns">
-                            <div class="card rounded-pill selection my-2"
-                                    v-for="dept in depts"
-                                    :key="dept.deptId"
-                                    @click="$router.push({ path: `/dept/${dept.deptId}` })">
+                            <router-link :to="'/dept/' + dept.deptId" 
+                                            tag="div"
+                                            class="card rounded-pill selection my-2"
+                                            v-for="dept in depts"
+                                            :key="dept.deptId">
                                 <div class="card-body">{{ dept.dept.deptName }}</div>
-                            </div>
+                            </router-link>
                         </div>
                     </div>
                 </div>
