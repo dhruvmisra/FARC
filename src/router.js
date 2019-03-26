@@ -10,6 +10,7 @@ import ShowDoctor from './components/admin/ShowDoctor'
 import ShowHospital from './components/admin/ShowHospital'
 
 import Department from './components/Department'
+import Doctor from './components/Doctor'
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,7 @@ const routes = [
     { path: '/admin/show/doctor', component: ShowDoctor },
     { path: '/admin/show/hospital', component: ShowHospital },
     { path: '/dept/:id', component: Department },
+    { path: '/doctor/:id', component: Doctor },
 ];
 
 export default new VueRouter({

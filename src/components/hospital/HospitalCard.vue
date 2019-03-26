@@ -1,5 +1,5 @@
 <template>
-    <div class="card d-inline-block col-xs-12 col-sm-6 col-lg-4">
+    <div class="card d-inline-block m-2" id="hospital">
       <img :src="require('../../assets/health.png')" alt="Hospital Image" class="card-img-top">
       <div class="card-body">
         <h4 class="card-title mt-4">{{ hospital.hName }} </h4>
@@ -20,7 +20,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped> 
 
 </style>
 

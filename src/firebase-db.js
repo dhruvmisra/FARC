@@ -14,3 +14,4 @@ firebase.initializeApp(config);
 export const DeptsDB = firebase.database().ref('departments');
 export const HospitalsDB = firebase.database().ref('hospitals');
 export const DoctorsDB = firebase.database().ref('doctors');
+export const TestDB = firebase.database().ref('test');
