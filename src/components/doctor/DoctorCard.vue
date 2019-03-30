@@ -1,5 +1,5 @@
 <template>
-  <div class="card d-inline-block m-2">
+  <div class="card d-inline-block d-flex align-items-stretch">
       <div class="card-body">
         <img :src="require(`../../assets/${doctor.gender}.png`)" alt="Doctor image" class="card-img-top">
         <router-link :to="'/doctor/' + doctor.dId"

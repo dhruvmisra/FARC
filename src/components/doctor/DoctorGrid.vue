@@ -1,9 +1,9 @@
 <template>
-    <div class="row">
+    <div class="row justify-content-center">
       <app-doctor-card v-for="doctor in doctors"
                           :key="doctor.dId"
                           :doctor="doctor"
-                          class="mx-auto col-xs-12 col-sm-6 col-lg-3">
+                          class="col-xs-12 col-sm-6 col-lg-3 m-3">
       </app-doctor-card>
     </div>
 </template>

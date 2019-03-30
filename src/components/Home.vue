@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="container features">
-            <div class="row text-dark" style="font-size: 1.5em;">
+            <div class="row" style="font-size: 1.5em;">
                 <div class="card border-0 mx-auto col-md-12 col-lg-4"
                         v-for="feature in features"
                         :key="feature.text">
@@ -20,13 +20,13 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid section">
-            <div class="container">
-                <div class="card bg-transparent border-0 text-center">
-                    <div class="card-header bg-transparent">
-                        <h1 class="card-title text-white">Departments</h1>
-                    </div>
-                    <div class="card-body">
+        <div class="container-fluid departments">
+            <div class="card bg-transparent border-0 text-center">
+                <div class="card-header bg-transparent dept-header d-flex align-items-center justify-content-center">
+                    <h1 class="card-title text-white">Departments</h1>
+                </div>
+                <div class="card-body section">
+                    <div class="container">
                         <div class="card-columns">
                             <router-link :to="'/dept/' + dept.deptId" 
                                             tag="div"
@@ -90,12 +90,26 @@
     }
 
     .features {
+        color: #000000;
         height: fit-content;
     }
+
     .section {
-        background-color: black;
+        background-color: #f7f7f7;
         height: fit-content;
     }
+    .departments {
+        background-image: url('../assets/departments.jpg');
+        height: 250px;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+    .dept-header {
+        height: 250px;
+        text-shadow: 1px 1px black;
+    }
+
     .selection:hover {
         transform: scale(1.05);
         cursor: pointer;

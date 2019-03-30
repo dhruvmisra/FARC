@@ -1,9 +1,9 @@
 <template>
-    <div class="row">
+    <div class="row justify-content-center">
       <app-hospital-card v-for="hospital in hospitals"
                           :key="hospital.hId"
                           :hospital="hospital"
-                          class="mx-auto col-xs-12 col-sm-6 col-lg-4">
+                          class="col-xs-12 col-sm-6 col-lg-3 m-3">
       </app-hospital-card>
     </div>
 </template>

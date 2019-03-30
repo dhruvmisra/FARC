@@ -1,5 +1,5 @@
 <template>
-    <div class="card d-inline-block m-2" id="hospital">
+    <div class="card d-inline-block d-flex align-items-stretch" id="hospital">
       <img :src="require('../../assets/health.png')" alt="Hospital Image" class="card-img-top">
       <div class="card-body">
         <h4 class="card-title mt-4">{{ hospital.hName }} </h4>
