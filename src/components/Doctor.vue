@@ -5,12 +5,12 @@
         <div class="row">
           <img :src="require(`../assets/${doctor.gender}.png`)" 
                 alt="Doctor Image" 
-                class="rounded-circle d-inline-block mx-auto"
+                class="rounded-circle d-inline-block mx-auto my-2"
                 style="width: 15em; height: 15em">
           <div class="card d-inline-block mx-auto col-md-12 col-lg-9">
-            <div class="card-body row justify-content-between">
+            <div class="card-body row mx-auto">
               <!-- Doctor info -->
-              <div class="info">
+              <div class="info mb-2 col-xs-12 col-sm-8 col-md-9">
                 <h2 class=""> {{ doctor.firstName | dr }} {{ doctor.lastName }} </h2>
                 <div class=""> {{ doctor.designation }} </div>
                 <div class=""> {{ doctor.hName }} </div>
@@ -21,7 +21,7 @@
                 </div>
               </div>
               <!-- Rating -->
-              <div class="card text-center text-muted">
+              <div class="card text-center text-muted mt-3 mx-auto">
                 <div class="card-body">
                   <div class="card-title">Rating</div>
                   <h1 class="card-text"> {{ doctor.rating }} </h1>
@@ -41,6 +41,25 @@
           </div>
         </div>
       </div>
+
+      <div class="card my-2 ml-auto col-sm-12 col-md-6 ">
+        <div class="card-body">
+          <table class="table table-hover table-striped text-center">
+            <thead>
+              <tr>
+                <h4 scope="col">Book Appointment</h4>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="day in doctor.available"
+                  :key="day">
+                <td> {{ day }} </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
     </div>
 </template>
 
@@ -51,7 +70,7 @@
       data() {
         return {
           doctor: {},
-          id: parseInt(this.$route.params.id, 10)
+          id: parseInt(this.$route.params.id, 10),
         }
       },
       created() {
@@ -63,16 +82,14 @@
             const snapshot = snap.val();
             const key = Object.keys(snapshot);
             const doc = snapshot[key[0]];
-            this.doctor = doc;
 
-            HospitalsDB.orderByChild('hId').equalTo(this.doctor.hId).once('value', snap => {
+            HospitalsDB.orderByChild('hId').equalTo(doc.hId).once('value', snap => {
               const snapshot = snap.val();
               const key = Object.keys(snapshot);
               const hosp = snapshot[key[0]];
-              console.log(hosp);
-              this.doctor.hName = hosp.hName;
-              console.log(this.doctor.hName);
-            })
+              doc.hName = hosp.hName;
+              this.doctor = doc;
+            });
           });
         }
         // code used to fix firebase string entries to int

@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark" style="background: black">
-    <router-link to="/" tag="a" class="navbar-brand">FARC</router-link>
+    <router-link to="/" tag="a" class="navbar-brand" style="font-size: 30px">FARC</router-link>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

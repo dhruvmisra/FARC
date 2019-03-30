@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="parallax">
         <div class="jumbotron">
             <div class="container text-white">
                 <div class="col-sm-12 col-md-6 col-lg-4">
@@ -24,7 +24,7 @@
             <div class="container">
                 <div class="card bg-transparent border-0 text-center">
                     <div class="card-header bg-transparent">
-                        <h1 class="card-title">Departments</h1>
+                        <h1 class="card-title text-white">Departments</h1>
                     </div>
                     <div class="card-body">
                         <div class="card-columns">
@@ -76,16 +76,24 @@
 
 <style>
     .jumbotron {
-        background: url("../assets/jumbo.jpg") no-repeat center center;
+        background: none;
         background-size: cover;
         width: 100%;
         height: 450px; 
     }
+    .parallax {
+      background-image: url('../assets/jumbo.jpg');
+      height: 450px;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+
     .features {
         height: fit-content;
     }
     .section {
-        background-color: #f7f7f7;
+        background-color: black;
         height: fit-content;
     }
     .selection:hover {

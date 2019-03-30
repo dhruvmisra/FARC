@@ -2,7 +2,12 @@
   <div class="card d-inline-block m-2">
       <div class="card-body">
         <img :src="require(`../../assets/${doctor.gender}.png`)" alt="Doctor image" class="card-img-top">
-        <h4 class="card-title mt-4">{{ doctor.firstName | dr }} {{ doctor.lastName }} </h4>
+        <router-link :to="'/doctor/' + doctor.dId"
+                      tag="h4"
+                      class="card-title mt-4 link"
+                      style="cursor: pointer">
+                      {{ doctor.firstName | dr }} {{ doctor.lastName }}
+        </router-link>
         <div class="card-text">{{ doctor.designation }}</div>
         <div class="card-text">{{ hName }}</div>
         <small>Qual: {{ doctor.qualification }}</small> <br>

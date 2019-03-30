@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="text-center my-3">{{ department.deptName }}</h1>
+    <h1 id="name" class="text-center my-3">{{ department.deptName }}</h1>
     <hr>
     <div class="card text-center my-2">
       <h5 class="card-header bg-dark text-white">Treatments in this department</h5>
@@ -22,14 +22,14 @@
     <br>
     <div class="card text-center my-2">
       <h5 class="card-header bg-dark text-white">Hospitals with this department</h5>
-        <div class="card-body">
+        <div class="card-body scroll">
           <app-hospital-grid :hospitals="hospitals"></app-hospital-grid>
         </div>
     </div>
     <br>
     <div class="card text-center my-2">
       <h5 class="card-header bg-dark text-white">Doctors of this department</h5>
-        <div class="card-body">
+        <div class="card-body scroll">
           <app-doctor-grid :doctors="doctors"></app-doctor-grid>
         </div>
     </div>
@@ -104,4 +104,8 @@
 </script>
 
 <style>
+  .scroll {
+      max-height: 85vh;
+      overflow-y: auto;
+  }
 </style>
